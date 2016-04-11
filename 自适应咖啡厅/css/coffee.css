@@ -1,0 +1,462 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/*防止出现白边*/
+.container {
+    background-color: white;
+    width: 100%;
+    height: 3309px;
+}
+
+header {
+    background-color: #ba0c2f;
+    width: 100%;
+    height: 7.6%;
+}
+
+.header-container {
+    background-color: #ba0c2f;
+    width: 74%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.header-logo {
+    background-color: #ba0c2f;
+    width: 100%;
+    height: 50%;
+    /*cursor: pointer;*/
+    margin: 0 auto;
+}
+
+.header-nav {
+    background-color: #ba0c2f;
+    width: 100%;
+    height: 50%;
+    /*cursor: pointer;*/
+}
+
+.header-nav a {
+    text-decoration: none;
+}
+
+.header-nav ul {
+    width: 100%;
+    height: 86%;
+    margin-left: 1.5%;
+}
+
+.header-nav ul li {
+    list-style: none;
+    background-color: #FFCD00;
+    width: 15%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    line-height: 650%;
+    float: left;
+    /*margin-left: 0.5%;*/
+    border-left: 1px solid black;
+
+}
+
+.header-nav ul li:hover {
+    background-color: white;
+    color: black;
+}
+
+.banner {
+    background-color: yellowgreen;
+    width: 100%;
+    height: 30.4%;
+    clear: both;
+}
+
+.banner-nav {
+    height: 5%;
+    width: 70%;
+    list-style: none;
+    /*background-color: #01b2f1;*/
+    position: absolute;
+    /*top: 10%;*/
+    /*float: left;    */
+    top: 150%;
+    left: 10%;
+
+}
+
+.banner-nav li {
+
+    width: 2%;
+    height: 10%;
+    color: red;
+    float: left;
+    margin-left: 1%;
+    border-radius: 90%;
+
+}
+
+.banner-nav li:nth-child(1) {
+    margin-left: 50%;
+}
+
+.banner-nav a {
+    text-decoration: none;
+    font-size: 200%;
+
+    color: black;
+}
+
+.banner-nav a:hover {
+    text-decoration: none;
+    font-size: 200%;
+
+    color: #ba0c2f;
+}
+
+.banner-animate {
+    width: 100%;
+    height: 20.4%;
+    position: absolute;
+    top: 137%;
+    overflow: hidden;
+    /*background-color: red;*/
+}
+
+.banner-animate1, .banner-animate2, .banner-animate3 {
+    width: 32.9%;
+    height: 100%;
+    /*position: absolute;*/
+    background-color: #42b852;
+    float: left;
+    margin-left: 0%;
+    opacity: 0.7;
+    line-height: 50px;
+    text-align: center;
+}
+
+.banner-animate-container {
+    width: 50%;
+    height: 100%;
+
+    margin: 0 auto;
+    position: relative;
+    left: 10%;
+    margin-left: 15%;
+    overflow: hidden;
+    /*background-color: royalblue;*/
+}
+
+.banner-animate-container2 {
+    width: 304%;
+    height: 100%;
+    /*background-color: white;*/
+    position: absolute;
+    /*margin-left: 25%;*/
+    top: 0%;
+    /*left: 30%;*/
+    /*overflow: hidden;*/
+}
+
+.banner-animate1 {
+    /*margin-left: -61%;*/
+    background-color: #c4f144;
+    opacity: 0.6;
+}
+
+.banner-animate2 {
+    /*margin-left: 20%;*/
+    background-color: #c4f144;
+    opacity: 0.6;
+}
+
+.banner-animate3 {
+    /*margin-left: 100%;*/
+    background-color: #c4f144;
+    opacity: 0.6;
+}
+
+nav {
+    background-color: green;
+    width: 100%;
+    height: 20.4%;
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    background: white;
+
+}
+
+.nav-container .nav-content1, .nav-content2, .nav-content3 {
+    width: 24%;
+    height: 72.7%;
+    background-color: #ba0c2f;
+    float: left;
+    margin: 5% 0 0 7%;
+    border-radius: 3%;
+
+}
+
+.nav-container .nav-content1:hover, .nav-content2:hover, .nav-content3:hover {
+    background-color: #FDC801;
+}
+
+.nav-pc {
+    background-color: #a746dd;
+    width: 100%;
+    height: 80%;
+    border-radius: 3% 3% 0 0;
+
+}
+
+.nav-text {
+    font-family: Arial;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    line-height: 550%;
+    color: white;
+}
+
+.content1 {
+    /*background-color: #f82f53;*/
+    width: 100%;
+    height: 17.7%;
+    background-image: url("../images/ban.jpg");
+}
+
+.content1 .content1-container {
+    width: 72%;
+    height: 85%;
+    /*background-color: #3c3f0d;*/
+    margin: 0 auto;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: bold;
+    /*text-align: center;*/
+    line-height: 400%;
+    color: white;
+    word-break: break-all;
+    word-wrap: break-word;
+    /*opacity: 0;*/
+}
+
+.content1 span {
+    width: 6%;
+    height: 12%;
+    background-color: #ba0c2f;
+    display: block;
+    border-radius: 20%;
+}
+
+.content1 span:hover {
+    background-color: gold;
+}
+
+.content2 {
+    background-color: #c6f845;
+    width: 100%;
+    height: 15.1%;
+    overflow: hidden;
+}
+
+.content2-container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    line-height: 450%;
+    text-align: center;
+    font-family: "Segoe UI Light";
+    overflow: hidden;
+}
+
+.content2 .content2-left {
+    width: 50%;
+    height: 100%;
+    background-color: #cde062;
+    float: left;
+}
+
+.content2 .content2-right {
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    float: left;
+}
+
+.content2-background {
+    width: 10%;
+    /*height: 9.3%;*/
+    position: absolute;
+    top: 381.4%;
+    left: 70%;
+    color: white;
+    background-color: #f3ff1a;
+    text-align: center;
+    font-family: "Segoe UI Light";
+    font-style: normal;
+    overflow: hidden;
+
+}
+
+.content2 .content2-botton {
+    width: 20%;
+    height: 15%;
+    margin: 0 auto;
+    margin-top: 10%;
+    line-height: 450%;
+    text-align: center;
+    font-family: "Segoe UI Light";
+    font-style: normal;
+    color: #676767;
+    border: 0.15em solid #ba0c2f;
+}
+
+.content2 a {
+    text-decoration: none;
+}
+
+.content3 {
+    background-color: #7ef894;
+    width: 100%;
+    height: 13.3%;
+    text-align: center;
+    font-family: "Segoe UI Light";
+}
+
+.content3-container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.content3 .content3-left {
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    float: left;
+}
+
+.content3 .content3-right {
+    width: 50%;
+    height: 100%;
+    background-color: #4de051;
+    float: left;
+}
+
+.content3-background {
+    width: 10%;
+    /*height: 10.2%;*/
+    position: absolute;
+    top: 443.4%;
+    left: 20%;
+    color: white;
+    background-color: #f3ff1a;
+    line-height: 4.5em;
+    text-align: center;
+    font-family: "Segoe UI Light";
+    font-style: normal;
+    overflow: hidden;
+
+}
+
+.content3 .content3-botton {
+    width: 20%;
+    height: 15%;
+    margin: 0 auto;
+    margin-top: 10%;
+    line-height: 450%;
+    text-align: center;
+    font-family: "Segoe UI Light";
+    font-style: normal;
+    color: #676767;
+    border: 0.15em solid #ba0c2f;
+}
+
+.content3 a {
+    text-decoration: none;
+}
+
+footer {
+
+    background-color: #181616;
+    width: 100%;
+    height: 13.3%;
+}
+
+.footer-main {
+    /*background-color: #e0ff22;*/
+    width: 100%;
+    height: 100%;
+}
+
+.footer-div1, .footer-div2, .footer-div3, .footer-div4 {
+    width: 20%;
+    height: 100%;
+    float: left;
+    /*margin-left: 1%;*/
+    /*background-color: #0dc9ff;*/
+    margin: auto;
+
+}
+
+.footer-div1 {
+    margin-left: 15%;
+}
+.footer-div4{
+    /*position: relative;*/
+}
+.footer-div ul li:hover {
+    color: gold;
+}
+
+.footer-div {
+    /*background-color: #c4c4c4;*/
+    height: 85%;
+    width: 100%;
+}
+
+.footer-div h1 {
+    font-family: "Sakkal Majalla";
+    color: white;
+}
+
+.footer-div h4 {
+    color: #990D29;
+}
+
+.footer-div a, p {
+    color: #A09898;
+    font-style: normal;
+    list-style: none;
+    line-height: 150%;
+    text-decoration: none;
+}
+
+/*div{}*4+table*/
+.copyright {
+    /*background-color: red;*/
+    font-style: normal;
+    width: 100%;
+    height: 15%;
+    color: #FFF;
+    font-family: Arial;
+    text-align: center;
+    font-size: 80%;
+}
+
+.footer-div4 ul li {
+    float: left;
+    margin-left: 5%;
+    /*background-attachment: fixed;*/
+
+
+
+}

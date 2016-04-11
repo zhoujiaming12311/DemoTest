@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="js/coffee.js"></script>
+    <link rel="stylesheet" href="css/coffee.css">
+
+<style>
+    .footer-div4 .footer-canvas{
+        /*width:146px;*/
+        /*height:36px;*/
+        /*background-color: red;*/
+        width: 30%;
+        height: 8.5%;
+        /*background-image:url(images/ftr-icon.png);*/
+        position: relative;
+        background-color: #181616;
+
+        /*background-position:82px 50%;*/
+        /*background-repeat:no-repeat;*/
+    }
+    .footer-canvas2{
+        /*background-attachment:fixed;*/
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0%;
+        /*background-color: yellow;*/
+        background-image:url(images/ftr-icon.png);
+        background-repeat: no-repeat;
+        /*background-position: 0 500%;*/
+    }
+
+</style>
+    <script>
+        $(function(){
+            $(".footer-canvas").mouseover(function(){
+                $(".footer-canvas2").css({
+                    "background-position": "0 105%"
+                })
+            })
+            $(".footer-canvas").mouseout(function(){
+                $(".footer-canvas2").css({
+                    "background-position": "0 0%"
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="container">
+
+    <header>
+        <div class="header-container">
+
+            <div class="header-logo">
+                <a href="javascript:;">
+                    <div style="height: 64%;width:26%; margin: 0 auto">
+                        <img src="images/logo.png" style="height: 100%;width:100%;">
+                    </div>
+                </a>
+            </div>
+            <div class="header-nav">
+                <ul>
+                    <a href="javascipt:;">
+                        <li style="border-left: none;color: black;background-color: white">Home</li>
+                    </a>
+                    <a href="javascipt:;">
+                        <li>About</li>
+                    </a>
+                    <a href="javascipt:;">
+                        <li>Services</li>
+                    </a>
+                    <a href="javascipt:;">
+                        <li>Typo</li>
+                    </a>
+                    <a href="javascipt:;">
+                        <li>blog</li>
+                    </a>
+                    <a href="javascipt:;">
+                        <li>Contact</li>
+                    </a>
+
+                </ul>
+            </div>
+
+
+        </div>
+    </header>
+    <!--以上是header部分-->
+
+    <div class="banner">
+        <img src="images/girls.jpg" style="width: 100%;height:100%;margin: auto">
+        <div style="width: 100%;height: 100%;position: static">
+            <div class="banner-animate">
+
+                <div class="banner-animate-container">
+
+                    <div class="banner-animate-container2">
+                        <div class="banner-animate1">
+                            这里是沉思者的殿堂
+                        </div>
+                        <div class="banner-animate2">
+                            这里是静谧的牧场
+                        </div>
+                        <div class="banner-animate3">
+                            这里是被遗忘的天堂
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <ol class="banner-nav">
+
+            <li><a href="javascript:;">●</a></li>
+            <li><a href="javascript:;">●</a></li>
+            <li><a href="javascript:;">●</a></li>
+
+        </ol>
+    </div>
+
+
+    <nav>
+
+        <div class="nav-container">
+            <div class="nav-content1">
+                <div class="nav-pc">
+                    <img src="images/b1.jpg" style="width: 100%;height:100%;">
+                </div>
+                <div class="nav-text">
+                    Black Coffee
+                </div>
+            </div>
+            <div class="nav-content2">
+                <div class="nav-pc">
+                    <img src="images/b2.jpg" style="width: 100%;height:100%;">
+                </div>
+                <div class="nav-text">
+                    Green Coffee
+                </div>
+            </div>
+            <div class="nav-content3">
+                <div class="nav-pc">
+                    <img src="images/b3.jpg" style="width: 100%;height:100%;">
+                </div>
+                <div class="nav-text">
+                    Coffee
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="content1">
+        <div class="content1-container">
+
+            <h1>Welcome</h1>
+            <h2>To our online coffee bar</h2>
+            <h4>There are many variations of passenagers of Lorem lpsum available.</h4>
+            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+                ccccccccccccccccccccccccccc
+            </p>
+            <span class="content1-icon"></span>
+        </div>
+    </div>
+
+    <div class="content2">
+        <div class="content2-container">
+            <div class="content2-left">
+                <img src="images/cafe.jpg" style="width: 100%;height: 100%">
+            </div>
+            <div class="content2-right">
+                <h3>Dolre magna aliqua</h3>
+                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                    ssssssssssssssssssssssssssssssssssss
+                    ddddddddddddddddddddddddddddddd
+                </p>
+                <a href="jacascript:;">
+                    <div class="content2-background">
+
+                    </div>
+                    <div class="content2-botton">
+                        learn more
+                    </div>
+
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content3">
+        <div class="content3-container">
+
+            <div class="content3-left">
+                <h3>Dolre magna aliqua</h3>
+                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                    ssssssssssssssssssssssssssssssssssss
+                    ddddddddddddddddddddddddddddddd
+                </p>
+                <a href="jacascript:;">
+                    <div class="content3-background">
+                        <!--111111111111111111-->
+                    </div>
+                    <div class="content3-botton">
+                        learn more
+                    </div>
+                </a>
+            </div>
+
+            <div class="content3-right">
+                <img src="images/bar.jpg" style="width: 100%;height: 100%">
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-div">
+                <div class="footer-div1">
+                    <h1>Information</h1>
+                    <ul>
+                        <a href="javascript:;">
+                            <li>Home</li>
+                        </a>
+                        <a href="javascript:;">
+                            <li>About</li>
+                        </a>
+                        <a href="javascript:;">
+                            <li>Services</li>
+                        </a>
+                        <a href="javascript:;">
+                            <li>Pages</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="footer-div2">
+                    <h1>My Account</h1>
+                    <ul>
+                        <a href="javascript:;">
+                            <li>My Account</li>
+                        </a>
+                        <a href="javascript:;">
+                            <li>My Address</li>
+                        </a>
+                        <a href="javascript:;">
+                            <li>My Cart</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="footer-div3">
+                    <h1>Contact Us</h1>
+                    <h4>Coffee-bar</h4>
+                    <p>aaaaaaaaaaaaa
+                        aaaaaaaaaaaaaaaaaaa
+                        aaaaaaaaaaaaaa
+                    </p>
+                </div>
+                <div class="footer-div4">
+                    <h1>Follow us</h1>
+                    <div class="footer-canvas">
+                        <!--<img src="images/ftr-icon.png">-->
+                        <ul>
+                          <div class="footer-canvas2">
+                              <!--<a href="javascript:;">
+                                  <li>1</li>
+                              </a>
+                              <a href="javascript:;">
+                                  <li>2</li>
+                              </a>
+                              <a href="javascript:;">
+                                  <li>3</li>
+                              </a>
+                          </div>
+
+                        </ul>      
+                    </div>
+                  
+
+                </div>
+            </div>
+
+            <div class="copyright">
+                Copyright @ 2015.Company name All rights reserved. More Templates 周嘉铭的个人项目-Collect from Mr.zhou
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
