@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.8.2.js"></script>
+    <script>
+        $(function(){
+
+            //获取要定位元素距离浏览器顶部的距离
+            var navH = $(".nav1").offset().top;
+            var navH2 = $(".nav2").offset().top;
+            var navH3 = $(".click1").offset().top;
+
+//滚动条事件
+            $(window).scroll(function(){
+//获取滚动条的滑动距离
+                var scroH = $(this).scrollTop();
+
+//滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离，就固定，反之就不固定
+                if(scroH>=navH){
+                    $(".nav1").css({"position":"fixed","top":0});
+                    if(scroH>=navH2) {
+                        $(".nav2").css({"position":"fixed","top":"50px"});
+
+                    }
+                    else if(scroH<navH2){
+                        $(".nav2").css({"position":"static"});
+                    }
+                }
+
+                else if(scroH<navH){
+                    $(".nav1").css({"position":"static"});
+                }
+
+            })
+
+
+            $(".line-content1").hide();
+            $(".line-content2").hide();
+            $(".line-content3").hide();
+            $(".theme .l1").mouseover(function(){
+
+                $(".line-content1").fadeIn(600)
+
+            })
+            $(".theme .l1").mouseout(function(){
+
+                $(".line-content1").fadeOut(600)
+
+            })
+
+            $(".theme .l2").mouseover(function(){
+
+                $(".line-content2").fadeIn(600)
+
+
+            })
+            $(".theme .l2").mouseout(function(){
+
+
+                $(".line-content2").fadeOut(600)
+
+            })
+            $(".theme .l3").mouseover(function(){
+
+                $(".line-content3").fadeIn(600)
+
+
+            })
+            $(".theme .l3").mouseout(function(){
+
+
+                $(".line-content3").fadeOut(600)
+
+            })
+
+
+            $(".show .pc .p1").hide();
+            var s=1;
+
+         var time=   setInterval( function p1(){
+
+                var name="img/p"+s+".jpg";
+                $(".show .pc .p1")
+                        .fadeIn(1000)
+                        .attr("src",name)
+
+                s++;
+             $(".show .pc .p1")
+                     .fadeOut(1000)
+
+
+             if(s==6){
+                 s=1;
+             }
+
+            },2000)
+
+//            clearInterval(time)
+            $(".show  .little-pc1").mouseover(function(){
+
+                $(".show .pc .p1")
+                        .fadeIn(1000)
+                        .attr("src","img/P1.jpg");
+
+            })
+
+            $(".show  .little-pc2").mouseover(function(){
+                $(".show .pc .p1")
+                        .fadeIn(1000)
+                        .attr("src","img/p4.jpg");
+
+            })
+            $(".show  .little-pc3").mouseover(function(){
+                $(".show .pc .p1")
+                        .fadeIn(1000)
+                        .attr("src","img/p5.jpg");
+
+            })
+            $(".show  .little-pc4").mouseover(function(){
+                $(".show .pc .p1")
+                        .fadeIn(1000)
+                        .attr("src","img/p6.jpg");
+
+            })
+            $(".show .pc-wall .pc1-wall").click(function(){
+                $(".pc7-wall").animate({width:"1000px"},500)
+                $(".pc7-wall .name1").animate({width:"503px"},2000)
+
+                $(".pc8-wall .name2").animate({width:"0px"},2000)
+                $(".pc9-wall .name3").animate({width:"0px"},2000)
+                $(".pc10-wall .name4").animate({width:"0px"},2000)
+                $(".pc11-wall .name5").animate({width:"0px"},2000)
+                $(".pc12-wall .name6").animate({width:"0px"},2000)
+
+                $(".pc8-wall").animate({width:"0px"},500)
+                $(".pc9-wall").animate({width:"0px"},500)
+                $(".pc10-wall").animate({width:"0px"},500)
+                $(".pc11-wall").animate({width:"0px"},500)
+                $(".pc12-wall").animate({width:"0px"},500)
+
+
+            })
+            $(".show .pc-wall .pc2-wall").click(function(){
+                $(".pc8-wall").animate({width:"1000px"},500)
+                $(".pc8-wall .name2").animate({width:"503px"},2000)
+
+                $(".pc7-wall .name2").animate({width:"0px"},2000)
+                $(".pc9-wall .name3").animate({width:"0px"},2000)
+                $(".pc10-wall .name4").animate({width:"0px"},2000)
+                $(".pc11-wall .name5").animate({width:"0px"},2000)
+                $(".pc12-wall .name6").animate({width:"0px"},2000)
+
+                $(".pc7-wall").animate({width:"0px"},500)
+                $(".pc9-wall").animate({width:"0px"},500)
+                $(".pc10-wall").animate({width:"0px"},500)
+                $(".pc11-wall").animate({width:"0px"},500)
+                $(".pc12-wall").animate({width:"0px"},500)
+
+            })
+            $(".show .pc-wall .pc3-wall").click(function(){
+                $(".pc9-wall").animate({width:"1000px"},500)
+                $(".pc9-wall .name3").animate({width:"503px"},2000)
+
+                $(".pc8-wall .name2").animate({width:"0px"},2000)
+                $(".pc7-wall .name3").animate({width:"0px"},2000)
+                $(".pc10-wall .name4").animate({width:"0px"},2000)
+                $(".pc11-wall .name5").animate({width:"0px"},2000)
+                $(".pc12-wall .name6").animate({width:"0px"},2000)
+
+                $(".pc8-wall").animate({width:"0px"},500)
+                $(".pc7-wall").animate({width:"0px"},500)
+                $(".pc10-wall").animate({width:"0px"},500)
+                $(".pc11-wall").animate({width:"0px"},500)
+                $(".pc12-wall").animate({width:"0px"},500)
+
+            })
+            $(".show .pc-wall .pc4-wall").click(function(){
+                $(".pc10-wall").animate({width:"1000px"},500)
+                $(".pc10-wall .name4").animate({width:"503px"},2000)
+
+                $(".pc8-wall .name2").animate({width:"0px"},2000)
+                $(".pc9-wall .name3").animate({width:"0px"},2000)
+                $(".pc7-wall .name4").animate({width:"0px"},2000)
+                $(".pc11-wall .name5").animate({width:"0px"},2000)
+                $(".pc12-wall .name6").animate({width:"0px"},2000)
+
+                $(".pc8-wall").animate({width:"0px"},500)
+                $(".pc9-wall").animate({width:"0px"},500)
+                $(".pc7-wall").animate({width:"0px"},500)
+                $(".pc11-wall").animate({width:"0px"},500)
+                $(".pc12-wall").animate({width:"0px"},500)
+
+            })
+            $(".show .pc-wall .pc5-wall").click(function(){
+                $(".pc11-wall").animate({width:"1000px"},500)
+                $(".pc11-wall .name5").animate({width:"503px"},2000)
+
+                $(".pc8-wall .name2").animate({width:"0px"},2000)
+                $(".pc9-wall .name3").animate({width:"0px"},2000)
+                $(".pc10-wall .name4").animate({width:"0px"},2000)
+                $(".pc7-wall .name5").animate({width:"0px"},2000)
+                $(".pc12-wall .name6").animate({width:"0px"},2000)
+
+                $(".pc8-wall").animate({width:"0px"},500)
+                $(".pc9-wall").animate({width:"0px"},500)
+                $(".pc10-wall").animate({width:"0px"},500)
+                $(".pc7-wall").animate({width:"0px"},500)
+                $(".pc12-wall").animate({width:"0px"},500)
+
+            })
+            $(".pc12-wall").animate({width:"1000px"},500)
+            $(".pc12-wall .name6").animate({width:"503px"},2000)
+            $(".show .pc-wall .pc6-wall").click(function(){
+                $(".pc12-wall").animate({width:"1000px"},500)
+                $(".pc12-wall .name6").animate({width:"503px"},2000)
+
+                $(".pc8-wall .name2").animate({width:"0px"},2000)
+                $(".pc9-wall .name3").animate({width:"0px"},2000)
+                $(".pc10-wall .name4").animate({width:"0px"},2000)
+                $(".pc11-wall .name5").animate({width:"0px"},2000)
+                $(".pc7-wall .name6").animate({width:"0px"},2000)
+
+                $(".pc8-wall").animate({width:"0px"},500)
+                $(".pc9-wall").animate({width:"0px"},500)
+                $(".pc10-wall").animate({width:"0px"},500)
+                $(".pc11-wall").animate({width:"0px"},500)
+                $(".pc7-wall").animate({width:"0px"},500)
+
+            })
+            $(".piano .l4").mouseover(function(){
+                $(".piano .l4-content").animate({
+                   height:"130px"
+                },800,function(){
+                    $(".piano .l5").animate({
+                        height:"130px"
+                    },700,function(){
+                        $(".piano .l5-content").animate({
+                            height:"130px"
+                        },600,function(){
+                            $(".piano .l6").animate({
+                                height:"130px"
+                            },500,function(){
+                                $(".piano .l6-content").animate({
+                                    height:"130px"
+                                },400)
+                            })
+                        })
+                    })
+                })
+            })
+            $(".piano .l6-content").click(function(){
+                    $(".piano .l6-content").animate({
+                        height:"0px"
+                    },800,function(){
+                        $(".piano .l6").animate({
+                            height:"0px"
+                        },800,function(){
+                            $(".piano .l5-content").animate({
+                                height:"0px"
+                            },700,function(){
+                                $(".piano .l5").animate({
+                                    height:"0px"
+                                },600,function(){
+                                    $(".piano .l4-content").animate({
+                                        height:"0px"
+                                    },500)
+                                })
+                            })
+                        })
+
+                    })
+
+            })
+            $(".c1").click(function(){
+                $(".c2").animate({
+                    width:"350px"
+                },500,function(){
+                    $(".c3").animate({
+                        width:"350px"
+                    },400,function(){
+                        $(".c4").animate({
+                            width:"350px"
+                        },300,function(){
+
+                        })
+                    })
+                })
+
+            })
+            $(".c1").mouseover(function(){
+
+                $(".c1").css({
+                    transform: " rotateY(180deg)"
+                })
+
+            })
+            $(".c1").mouseout(function(){
+
+                $(".c1").css({
+                    transform: " rotateY(360deg)"
+                })
+
+            })
+            $(".c2").mouseover(function(){
+
+                $(".c2").css({
+                    transform: " rotateY(180deg)"
+                })
+
+            })
+            $(".c2").mouseout(function(){
+
+                $(".c2").css({
+                    transform: " rotateY(360deg)"
+                })
+
+            })
+            $(".c3").mouseover(function(){
+
+                $(".c3").css({
+                    transform: " rotateY(180deg)"
+                })
+
+            })
+            $(".c3").mouseout(function(){
+
+                $(".c3").css({
+                    transform: " rotateY(360deg)"
+                })
+
+            })
+            $(".c4").mouseover(function(){
+
+                $(".c4").css({
+                    transform: " rotateY(180deg)"
+                })
+
+            })
+            $(".c4").mouseout(function(){
+
+                $(".c4  ").css({
+                    transform: " rotateY(360deg)"
+                })
+
+            })
+        })
+    </script>
+    <style>
+        .background{
+            width: 1570px;
+            height: 3000px;
+            background-color: #eeeeee;
+
+        }
+        .nav1{
+            background-color: #000000;
+            height: 50px;
+            width: 1570px;
+
+
+
+        }
+        .logo4{
+            background-color:white;
+            width: 1570px;
+            height: 100px;
+        }
+        .nav2{
+            background-color: white;
+            height: 60px;
+            width: 1570px;
+        }
+        .logo1,.logo2{
+            height: 50px;
+            width:  70px;
+            /*background-color:#01b2f1 ;*/
+
+        }
+        .logo1{
+            background-color: #ff329c;
+            float: left;
+        }
+        .logo2{
+            background-color: #ff3243;
+            float: left;
+
+        }
+
+
+
+
+        a{text-decoration: none}
+        .l1,.l2,.l3 div{
+            width: 70px;
+            height: 60px;
+            margin:0 auto ;
+            float: left;
+            margin-left: 345px;
+            background-color: white;
+        }
+
+        .line{
+            width: 80%;
+            height: 4px;
+            position: relative;
+            top: 50px;
+            left:160px;
+            background-color: saddlebrown;
+        }
+        .line-content1, .line-content2,.line-content3{
+            height: 400px;
+            width: 80%;
+            background-color:white;
+            position: relative;
+            top: 14px;
+            left:160px;
+            overflow: hidden;
+
+        }
+        .show{
+            height: 80%;
+            background-color: white;
+        }
+        .show .click1{
+       
+            width: 60px;
+            height: 60px;
+            background-color: white;
+
+        }
+        .show .pc{
+            width:1570px;
+            height:700px;
+            /*background-color: #871ce0;*/
+
+        }
+        .show .little-pc{
+            width:1570px;
+            height:100px;
+            background-color:white;
+        }
+        .little-pc1,.little-pc2,.little-pc3,.little-pc4{
+            width: 22%;
+            height: 100%;
+            background-color: white;
+            margin-left: 30px;
+            border: 5px solid white;
+            float: left;
+        }
+        .pc-wall{
+            width: 1200px;
+            height: 611px;
+            background-color: #01b2f1;
+            margin: auto;
+        }
+        .pc1-wall,.pc2-wall,.pc3-wall,.pc4-wall,.pc5-wall,.pc6-wall{
+            height: 100px;
+            width: 200px;
+            background-color: #366a80;
+            border: 1px solid white;
+            /*border-radius: 10px;*/
+
+        }
+        .pc1-wall{
+            background-image: url("img/g1-s.jpg");
+        }
+        .pc2-wall{
+            background-image: url("img/g2-s.jpg");
+        }
+        .pc3-wall{
+            background-image: url("img/g3-s.jpg");
+        }
+        .pc4-wall{
+            background-image: url("img/g4-s.jpg");
+        }
+        .pc5-wall{
+            background-image: url("img/g5-s.jpg");
+        }
+        .pc6-wall{
+            background-image: url("img/g6-s.jpg");
+        }
+        .pc7-wall{
+            height: 611px;
+            width: 0px;
+            float:left;
+            margin-left: 200px;
+            background-color: white;
+
+
+        }
+        .pc8-wall, .pc9-wall, .pc10-wall, .pc11-wall, .pc12-wall{
+            height: 611px;
+            width: 0px;
+            float:left;
+            margin-left: 0px;
+            background-color: pink;
+
+        }
+        .piano {
+            width:1570px;
+            height: 800px;
+            margin-top: 50px;
+            background-color: pink;
+        }
+        .piano  .l4{
+            width: 1300px ;
+            height: 130px;
+            margin:auto;
+            background-color: pink;
+            list-style: none;
+            border-radius: 10px;
+        }
+        .l5,.l6 ,.l4-content,.l5-content,.l6-content{
+            width: 1300px ;
+            height: 0px;
+            margin:auto;
+            background-color: #fe94ff;
+            list-style: none;
+            border-radius: 10px;
+        }
+
+        .foot{
+            height: 20%;
+            background-color: pink;
+        }
+        .c1{
+            height:350px;
+            width: 350px;
+            background-color: deeppink;
+            border-radius: 500px;
+            float: left;
+            background-image: url("img/c1.jpg");
+            transition: all 500ms ease;
+            transform-style: preserve-3d;
+            /*transform-origin: left bottom;  */
+        }
+        .c2{
+              height:350px;
+              /*width: 350px;*/
+              margin-top: 70px;
+              background-color: deeppink;
+              border-radius: 500px;
+              float: left;
+            background-image: url("img/c2.jpg");
+            transition: all 500ms ease;
+            transform-style: preserve-3d;
+            /*transform-origin: left bottom;*/
+
+
+          }
+           .c3{
+             height:350px;
+             /*width: 350px;*/
+             margin-top: 140px;
+             background-color: deeppink;
+             border-radius: 500px;
+             float: left;
+               background-image: url("img/c3.jpg");
+               transition: all 500ms ease;
+               transform-style: preserve-3d;
+         }
+        .c4{
+            height:350px;
+            /*width: 350px;*/
+            margin-top: 210px;
+            background-color: deeppink;
+            border-radius: 500px;
+            float: left;
+            background-image: url("img/c4.jpg");
+            transition: all 500ms ease;
+            transform-style: preserve-3d;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+
+        <div class="nav1">
+            <div class="logo1"><img src="img/logo1.jpg"style="width: 100%;height: 100%"></div>
+            <div class="logo2"><img src="img/logo2.jpg"style="width: 100%;height: 100%"></div>
+
+        </div>
+        <div style="height: 100px;width:400px;margin: auto"><img src="img/logo3.jpg "style="width: 100%;height: 100%"></div>
+        <div class="logo4"></div>
+        <div class="nav2">
+            <div class="theme">
+                <a href="#" class="l1"><div>首页</div></a>
+                <a href="#" class="l2"><div>展示</div></a>
+                <a href="#" class="l3"><div>时尚</div></a>
+            </div>
+
+
+            <div class="line"></div>
+            <div class="line-content1">这是第一个导航信息</div>
+            <div class="line-content2">这是第二个导航信息</div>
+            <div class="line-content3">这是第三个导航信息</div>
+        </div>
+
+        <div class="show">
+            <div class="pc"><img class="p1"></div>
+            <div class="little-pc"><a href="#"><div class="little-pc1"><img src="img/P1.jpg"style="width: 100%;height: 100%"></div></a><a href="#"><div class="little-pc2"><img src="img/p4.jpg"style="width: 100%;height: 100%"></div></a><a href="#"><div class="little-pc3"><img src="img/p5.jpg"style="width: 100%;height: 100%"></div></a>
+                <a href="#" ><div class="little-pc4"><img src="img/p6.jpg"style="width: 100%;height: 100%"></div></a></div>
+            <div class="click1">today</div>
+
+            <div class="pc-wall">
+                <div class="pc7-wall" style="font-weight: bold;font-family:楷体;"><div style="width: 48%;height: 100%;background-color: #fe94ff;float: left"><img src="img/g1.jpg"style="width: 100%;height: 100%;"></div>　<div class="name1" style="float: left;background-color: #fe94ff;width: 0px;height:100%;overflow: hidden;word-break: break-all;word-wrap: break-word">
+                    Candice Swanepoel 的腼腆恬静在众天使中显得犹为凸出，拥有近乎完美的身材，丰满的胸部，纤细的腰身和修长的双腿，笑容含蓄妖媚，配合她那双会说话的眼睛，令人无法抵挡。恬淡中带有性感的气质也为她赢得了更多的人气。成为维多利亚的秘密新天使中的佼佼者，同时在high fashion领域也有不俗表现。
+                    </br>中文名</br>
+                    坎蒂丝·斯瓦内普尔</br>
+                    外文名</br>
+                    Candice Swanepoel</br>
+                    国    籍</br>
+                    南非</br>
+                    身    高</br>
+                    176cm</br>
+                    体    重</br>
+                    54.5kg</br></div>
+                </div>
+                <div class="pc8-wall"style="font-weight: bold;font-family:楷体;"><div style="width: 48%;height: 100%;background-color: #fe94ff;float: left"><img src="img/g2.jpg"style="width: 100%;height: 100%;"></div>　
+                    <div class="name2" style="float: left;background-color: #fe94ff;width: 0px;height:100%;overflow: hidden;word-break: break-all;word-wrap: break-word">
+                        Stella Maxwell
+                        　　三围：32-22.5-33
+                        　　1991年生，出生在英国。
+                   </div>
+                </div>
+                <div class="pc9-wall"style="font-weight: bold;font-family:楷体;"><div style="width: 48%;height: 100%;background-color: #fe94ff;float: left"><img src="img/g3.jpg"style="width: 100%;height: 100%;"></div>　
+                    <div class="name3" style="float: left;background-color: #fe94ff;width: 0px;height:100%;overflow: hidden;word-break: break-all;word-wrap: break-word">
+                        　Elsa Hosk
+                        　　1988年生，瑞典姑娘。和其它新入选的维密天使相比，ElsaHosk算模特界的”老姜“了，13岁粑粑就拿着她的照片四处找模特经纪公司，14岁开始模特生涯，期间并没有放弃学业，高中毕业后她也没有马上开始专业模特生涯，而到在瑞典女子篮球队打了2年职业篮球。随后代言等邀约越来越多，于是ElsaHosk放弃篮球，赴美国开启正式的模特生涯。
+                        　　现在已经代言过Dior, Dolce & Gabbana, Free People, Ungaro, H&M,Guess等时装品牌。
+                    </div>
+                </div>
+                <div class="pc10-wall"style="font-weight: bold;font-family:楷体;"><div style="width: 48%;height: 100%;background-color: #fe94ff;float: left"><img src="img/g4.jpg"style="width: 100%;height: 100%;"></div>　
+                    <div class="name4" style="float: left;background-color: #fe94ff;width: 0px;height:100%;overflow: hidden;word-break: break-all;word-wrap: break-word">
+                        　Lais Ribeiro
+                        　　三围：31.5-23-33
+                        　　90年的巴西妹纸。2009年开始职业生涯，随后就走了包括Chanel, LouisVuitton, Gucci, Dolce &Gabbana, Versace, Marc Jacobs在内的大秀。在Models.com中属于“Top Sexiest Models”行列。
+                    </div>
+                </div>
+                <div class="pc11-wall"style="font-weight: bold;font-family:楷体;"><div style="width: 48%;height: 100%;background-color: #fe94ff;float: left"><img src="img/g5.jpg"style="width: 100%;height: 100%;"></div>　
+                    <div class="name5" style="float: left;background-color: #fe94ff;width: 0px;height:100%;overflow: hidden;word-break: break-all;word-wrap: break-word">
+                        　Sara Sampaio
+                        　　三围：32-23.5-34
+                        　　1991年生，葡萄牙人，2011、2012、2014、2015接连被葡萄牙金球奖评为“最佳女超模奖”。
+                    </div>
+                </div>
+                <div class="pc12-wall"style="font-weight: bold;font-family:楷体;"><div style="width: 48%;height: 100%;background-color: #fe94ff;float: left"><img src="img/g6.jpg"style="width: 100%;height: 100%;"></div>　
+                    <div class="name6" style="float: left;background-color: #fe94ff;width: 0px;height:100%;overflow: hidden;word-break: break-all;word-wrap: break-word">
+                        　Romee Strijd
+                        　　三围：31-23-33
+                        　　1995年的荷兰嫩妹纸，长相甜美。
+                        2011年签约模特公司，虽然出道时间并不久，但已经走了包括AlexanderMcQueen、Burberry、Celine、Kenzo、LouisVuitton、Prada、VeraWang等数十场大秀。
+                    </div>
+                </div>
+
+                <div class="pc1-wall"></div>
+                <div class="pc2-wall"></div>
+                <div class="pc3-wall"></div>
+                <div class="pc4-wall"></div>
+                <div class="pc5-wall"></div>
+                <div class="pc6-wall"></div>
+
+            </div>
+
+            <div class="piano">
+                <ul>
+                    <li class="l4"><img src="img/piano1.jpg"style="width: 100%;height: 100%"></li>
+                    <li class="l4-content"><img src="img/piano2.jpg"style="width: 100%;height: 100%"></li>
+                    <li class="l5"><img src="img/piano3.jpg"style="width: 100%;height: 100%"></li>
+                    <li class="l5-content"><img src="img/piano4.jpg"style="width: 100%;height: 100%"></li>
+                    <li class="l6"><img src="img/piano5.jpg"style="width: 100%;height: 100%"></li>
+                    <li class="l6-content"><img src="img/piano6.jpg"style="width: 100%;height: 100%"></li>
+
+                </ul>
+            </div>
+
+        </div>
+        <div class="foot">
+
+            <div class="c1"></div>
+            <div class="c2"></div>
+            <div class="c3"></div>
+            <div class="c4"></div>
+
+        </div>
+
+
+    </div>
+</body>
+</html>
