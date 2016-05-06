@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<meta name="viewport" content="width=divce-width,initial-scale=1.0,user-scalable=no">-->
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+            <canvas id="ss"width="800"height="500"></canvas>
+
+    <script>
+     /*   var cvs=document.getElementById('ss');
+      var context=cvs.getContext('2d');
+      context.beginPath();
+      context.rect(0,0,50,100);
+      context.fillStyle='#8ED6FF'
+      context.fill();
+      context.lineWidth=2;
+      context.strokeStyle='#000';
+      context.stroke();
+
+      context.beginPath();
+
+      context.arc(100,100,5,0,2*Math.PI,true);
+      context.fillStyle='#FFF';
+      context.fill();
+      context.lineWidth=2;
+      context.strokeStyle='#ccc';
+      context.stroke();
+      */
+        var cvs=document.getElementById('ss');
+        var context=cvs.getContext('2d');
+
+       //20*20的小方块
+        function  ditu(x,y,x1,y1,fatherX,fatherY){
+            this.x=x;
+            this.y=y;
+            //父亲节点的坐标
+            this.fatherX=fatherX;
+            this.fatherY=fatherY;
+
+            this.x1=x1;
+            this.y1=y1;
+
+            this.zflag=1;//zflag=0 表示走过
+            this.flag=1;//flag=0 代表是障碍物
+
+        }
+
+        function draw(object){
+            context.beginPath();
+            context.rect(object.x,object.y,20,20);
+            context.fillStyle='yellow'
+            context.fill();
+//            context.lineWidth=1;
+            context.strokeStyle='yellow';
+            context.lineWidth=0.2;
+            context.strokeStyle='#000';
+            context.stroke();
+
+//            console(object.x+','+object.y);
+        }
+       var map=new Array();
+       function maps(){
+           for(var i=0;i<25;i++)
+           {
+               map[i]=new Array();
+               for (var j=0;j<40;j++)
+               {
+
+                   map[i][j]=new ditu(j*20,i*20,i,j);
+                   draw(map[i][j]);
+
+
+               }
+
+           }
+       }
+     //画特工
+     var tegong;
+     function spy(){
+
+         context.beginPath();
+         var v=Math.floor(Math.random()*25);
+         var x=Math.floor(Math.random()*40);
+
+         map[v][x].flag=0;
+
+         context.rect(map[v][x].x,map[v][x].y,20,20);
+         context.fillStyle='black'
+         context.fill();
+//            context.lineWidth=1;
+         context.strokeStyle='yellow';
+         context.lineWidth=0.2;
+//         context.strokeStyle='#000';
+         context.stroke();
+         tegong=map[v][x];
+
+
+     }
+     //画目标
+     var target;
+     function mubiao(){
+         context.beginPath();
+         var v=Math.floor(Math.random()*25);
+         var x=Math.floor(Math.random()*40);
+
+
+         context.rect(map[v][x].x,map[v][x].y,20,20);
+         context.fillStyle='blue'
+         context.fill();
+//            context.lineWidth=1;
+         context.strokeStyle='blue';
+         context.lineWidth=0.2;
+//         context.strokeStyle='#000';
+         context.stroke();
+         target=map[v][x];
+
+     }
+     //画障碍物
+     function zhangai(){
+         var num=Math.ceil(Math.random()*80);
+         for(var i=0;i<num;i++){
+
+
+             var v=Math.floor(Math.random()*25);
+             var x=Math.floor(Math.random()*40);
+            if( map[v][x]!=target && map[v][x]!=tegong){
+
+                map[v][x].flag=0;
+
+                context.beginPath();
+                context.rect(map[v][x].x,map[v][x].y,20,20);
+                context.fillStyle='red'
+                context.fill();
+//            context.lineWidth=1;
+                context.strokeStyle='red';
+                context.lineWidth=0.2;
+//             context.strokeStyle='#000';
+                context.stroke();
+            }
+
+
+            }
+
+
+     }
+    //排序
+     function compare(propertyName) {
+         return function (object1, object2) {
+             var value1 = object1[propertyName];
+             var value2 = object2[propertyName];
+             if (value2 < value1) {
+                 return 1;
+             }
+             else if (value2 > value1) {
+                 return -1;
+             }
+             else {
+                 return 0;
+             }
+         }
+     }
+     var shuzu=new Array();
+     function paixu(para){
+         var zu=new Array();
+         for(var i=0;i<shuzu.length;i++)
+         {
+            shuzu[i].distance= Math.sqrt((para[i].x1-target.x1)* (para[i].x1-target.x1) +  (para[i].y1-target.y1)* (para[i].y1-target.y1));
+//             console.log(shuzu[i]);
+         }
+         shuzu.sort(compare("distance"));
+         return shuzu;
+
+
+     }
+
+
+     //寻路
+     function path(para){
+
+         var s=para;
+         var x= s.x;
+         var y= s.y;
+         var x1= s.x1;
+         var y1= s.y1;
+//         console.log("s.x1="+x1+"s.y1="+y1);
+
+         for(var i=0;i<8;i++){
+
+           if(i==0 && y1+1!=40&& map[x1][y1+1].zflag!=0 &&  map[x1][y1+1].flag!=0 ){
+
+               shuzu.unshift(map[x1][y1+1]);
+
+//               console.log(duilie);
+           }
+             else if(i==1&&y1!=40&&x1+1!=25&&map[x1+1][y1+1].zflag!=0&&map[x1+1][y1+1].flag!=0 ){
+
+               if( map[x1][y1+1].flag!=0||map[x1+1][y1]!=0)//右下角只有在右边和下边不同时为障碍物能走
+               {
+
+                  shuzu.unshift(map[x1+1][y1+1]);
+
+//                   console.log(duilie);
+               }
+
+             }
+            else if(i==2&&x1+1!=25&&map[x1+1][y1].zflag!=0&&map[x1+1][y1].flag!=0){//
+               shuzu.unshift(map[x1+1][y1])
+
+//                 console.log(duilie);
+             }
+            else if(i==3&&x1+1!=25&&y1-1!=-1&&map[x1+1][y1-1].zflag!=0&&map[x1+1][y1-1].flag!=0){
+
+               if(map[x1+1][y1].flag!=0||map[x1][y1-1].flag!=0){
+                   shuzu.unshift(map[x1+1][y1-1])
+               }
+
+             }
+            else if(i==4&&y1-1!=-1&&map[x1][y1-1].zflag!=0&&map[x1][y1-1].flag!=0){
+               shuzu.unshift(map[x1][y1-1])
+             }
+            else if(i==5&&x1-1!=-1&&y1-1!=-1&&map[x1-1][y1-1].zflag!=0&&map[x1-1][y1-1].flag!=0){
+
+               shuzu.unshift(map[x1-1][y1-1])
+
+             }
+            else if(i==6&&x1-1!=-1&&map[x1-1][y1].zflag!=0&&map[x1-1][y1].flag!=0){
+               shuzu.unshift(map[x1-1][y1])
+//                 console.log(duilie);
+             }
+            else if(i==7&&x1-1!=-1&&y1+1!=40&&map[x1-1][y1+1].zflag!=0&&map[x1-1][y1+1].flag!=0){
+
+               shuzu.unshift(map[x1-1][y1+1])
+             }
+
+
+         }
+         var arr=paixu(shuzu);
+
+
+             if( arr[0]==target){
+                 clearInterval(timer);
+                 arr[0].fatherX= s.x1;
+                 arr[0].fatherY= s.y1;
+                 duilie.unshift(arr[0]);
+                 find(arr[0]);
+
+             }
+         else {
+                 context.beginPath();
+                 context.rect(arr[0].x,arr[0].y,20,20);
+                 context.fillStyle='gray'
+                 context.fill();
+                 context.stroke();
+
+                 arr[0].zflag=0;
+                 arr[0].fatherX= s.x1;
+                 arr[0].fatherY= s.y1;
+                 console.log(arr)
+                 duilie.unshift(arr[0]);
+             }
+
+
+
+
+     }
+     function beign(){
+         maps();
+         spy();
+         mubiao();
+
+         zhangai();
+     }
+
+        beign();
+     var duilie=new Array();
+
+     duilie.unshift(tegong);
+//     console.log(duilie[0])
+//     console.log('tegong='+duilie);
+
+     function sss(){
+        var x= duilie.pop();
+        if(x)
+        path(x);
+     }
+
+
+
+    function find(t){
+
+        while (t!=tegong){
+           console.log(111)
+
+           /* context.beginPath();
+            context.strokeStyle='#000';
+            context.lineWidth=1;
+            context.moveTo(t.x, t.y);*/
+            if(t!=target){
+
+                context.beginPath();
+                context.rect(t.x,t.y,20,20);
+                context.strokeStyle='black';
+                context.fillStyle='green'
+                context.fill();
+               console.log(t)
+                context.stroke();
+            }
+
+//        map[t.fatherX,t.fatherY]
+            var x=map[t.fatherX][t.fatherY].x;
+            var y=map[t.fatherX][t.fatherY].y;
+
+//            context.lineTo(x, y);
+//            context.stroke();
+            t=map[t.fatherX][t.fatherY];
+            find(t);
+
+        }
+
+
+    }
+
+var timer=setInterval(sss,100)
+
+//    path(duilie[0]);
+
+    </script>
+</body>
+
+</html>
