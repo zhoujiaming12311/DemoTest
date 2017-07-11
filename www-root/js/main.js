@@ -11,7 +11,7 @@ $(function() {
 
 	function slideShow() {
 		var num = $('#picList').attr('num');
-		var node = " ";
+		var node = "";
 		for (var i = 1; i <= num; i++) {
 			node += "<li class='pic" + i + "'><img src='img/picture" + i + ".jpg' alt='picture" + i + ".jpg'></li>";
 		}
