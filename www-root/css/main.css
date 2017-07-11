@@ -1,0 +1,35 @@
+* { padding: 0; margin: 0; }
+ul { list-style: none; }
+ /*清除浮动*/
+.clear { clear: both; }
+
+/*主窗体 窗体代码利用translate定位*/
+#container { width: 365px; height: 320px; margin: 0 auto; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); background: red; overflow: hidden; }
+
+/*轮播区域*/
+#picComponent { width: 2920px; position: absolute; left: -365px; }
+#picComponent img { width: 100%; height: 100%; }
+
+/*轮播图片*/
+#picList li { width: 365px; height: 450px; float: left; }
+
+/*轮播控制箭头*/
+#leftArrow, #rightArrow { width: 30px; height: 60px; background: #6c6d65; position: absolute; top: 50%; -webkit-transform: translate(0, -50%); -moz-transform: translate(0, -50%); -o-transform: translate(0, -50%); -ms-transform: translate(0, -50%); transform: translate(0, -50%); cursor: pointer; }
+#leftArrow:hover, #rightArrow:hover { background: #d10849; }
+#leftArrow { left: 0; }
+#rightArrow { right: 0; }
+
+/*用伪元素画出箭头*/
+#leftArrow:before, #leftArrow:after, #rightArrow:before, #rightArrow:after { content: ""; width: 0; height: 0; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+#leftArrow:before { border-right: 10px solid #fff; }
+#leftArrow:after { left: 55%; border-right: 10px solid #6c6d65; }
+#leftArrow:hover::after { border-right: 10px solid #d10849; }
+#rightArrow:before { border-left: 10px solid #fff; }
+#rightArrow:after { left: 43%; border-left: 10px solid #6c6d65; }
+#rightArrow:hover::after { border-left: 10px solid #d10849; }
+
+/*底部按钮 为兼容ie8采用雪碧图制作按钮图片*/
+#botton { position: absolute; left: 50%; transform: translate(-50%, 0);  bottom: 8px; }
+#botton li { width: 12px; height: 12px; float: left; margin-right: 12px; overflow: hidden; }
+#botton li img { width: 12px; height: 23px; position: relative; }
+#botton .bottonChange img { top: -11px; }

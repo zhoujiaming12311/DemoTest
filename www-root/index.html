@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script src="jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" href="css/main.css">
+<body>
+
+	<div id="container">		
+            <div id="picComponent">            
+			<ul id="picList" num="5"></ul>
+            </div>
+            <span id="leftArrow"></span>
+		    <span id="rightArrow"></span>
+			<ul id="botton"></ul>	
+	</div>
+<!--[if IE 8]>
+<script>
+$('head').append("<style>#leftArrow:before,#leftArrow:after,#rightArrow:before,#rightArrow:after{ top:34% }</style>");
+//保证伪元素的位置
+//IE8 下的垂直居中,保证能随浏览器的变化保持居中
+$(function(){
+	function windowalign() {
+
+		var bodyheight = $(window).height(),//获得屏幕高度
+		bodywidth = $(window).width(), //获得屏幕宽度
+
+		wrapwidth = $("#container").width(), //要垂直居中的内容的宽度
+
+		wrapheight = $("#container").height(); //要垂直居中的内容的高度度
+
+		var postop = (bodyheight - wrapheight) / 2; // 获取顶部的position
+
+		var posleft = (bodywidth - wrapwidth) / 2; // 获取左边部的position
+
+		$("#container").css({
+			"left": posleft + "px",
+			"top": postop + "px"
+		});
+		// 设置position
+
+        arrowH= $("#leftArrow").height();
+        arrdis=wrapheight/2-arrowH/2+"px";
+        $("#leftArrow,#rightArrow").css({
+			"top":arrdis
+        })
+        //设置箭头位置
+	}
+	windowalign();
+	$(window).resize(function() { // 当调整窗口的时候动态修正位置
+		windowalign();
+	});
+
+})
+</script>
+<![endif]-->
+	<script src="js/main.js"></script>
+</body>
+</html>
