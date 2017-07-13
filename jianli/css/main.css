@@ -78,11 +78,13 @@ body{
 }
 #middleModel img{
 	max-width: 50%;
+	max-height: 320px;
 
 }
 .production .info{
 		text-align: center!important;
 	}
+
 .clear{
 	clear: both;
 }
@@ -92,15 +94,21 @@ body{
 		padding-top: 40px;
 		padding-bottom: 40px;
 	}
+
+	/* .production img{
+		width:200px;
+		height: 350px;
+		// height: 40%;
+	} */
 	.info_left{
 		width: 40% !important;
 		margin-left:10%; 
-		    float: left !important;
+		float: left !important;
 	}
 	.info_right{
-		width: 40% !important;
-		margin-right:10%;
-	    float: left !important;
+		width: 39% !important;
+		margin-right:9%;
+	    float: right!important;
 	}
 	
 }
@@ -128,6 +136,10 @@ body{
 		width:35%;
 		// height: 40%;
 	}
+	.production {
+		width: 33%;
+		float: left;
+	}
 	#topModel,#info{
 	
 		padding-left: 10%;
@@ -140,6 +152,9 @@ body{
 	.model1 .info{
 		text-align: center!important;
 
+	}
+	.model1 .skill{
+		text-align: justify!important;
 	}
 }
 @media only screen and (min-width: 960px){
@@ -155,6 +170,11 @@ body{
 	.info_left{
 		width: 24%!important;
 		margin-left: 0%;
+	}
+	.info_right{
+		
+		margin-right:5%;
+	    
 	}
 
 }
