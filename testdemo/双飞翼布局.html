@@ -11,7 +11,6 @@
     }
     .container{
     	min-width: 500px;
-    	padding: 0 200px;
     }
     .header{
 		width: 100%;
@@ -30,8 +29,6 @@
         height: 150px;
 		background-color: blue;
 		margin-left: -100%;
-		position: relative; 
-		left: -200px;
 		float: left;
 	}
 	.right{
@@ -40,14 +37,15 @@
 		background-color: green; 
 		margin-left: -200px;
 		float: left;
-		position: relative;
-		right: -200px;
 	}
 
 	 .footer{
 		width: 100%;
 		background-color: gray;
 		height: 100px;
+	}
+	.inner{
+		margin: 0 200px;
 	}
 	.clear{
 		clear:both;
@@ -56,7 +54,7 @@
 <body>
 	<div class="header"></div>
 	<div class="container">
-		<div class="middle">sadasssssssssssssssssssssssssssssssssssssssssssssssssssssssss</div>
+		<div class="middle"><div class="inner"></div></div>
 		<div class="left"></div>
 		<div class="right"></div>
 		<div class="clear"></div>
@@ -64,4 +62,4 @@
 	<div class="footer"></div>
 </body>
 </html>
-<!-- 圣杯布局同三列布局相比可以达到主题部分快速渲染的效果 -->
+<!-- 双飞翼布局本质上是圣杯布局的一个变体，增加一个内置标签利用margin来解决文字遮挡的问题；同时双飞翼布局不用relative定位，在middle部分比两边小的时候也不会出现圣杯布局错位的问题。-->
