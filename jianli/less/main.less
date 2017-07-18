@@ -1,0 +1,190 @@
+@background-color: #ffffff;
+@theme-color:#bf1515;
+@wenzi-color:#6c6d70;
+@url:"../img/bg.jpg";
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	padding: 35px 10px 10px 10px;
+	background-image: url(@url);
+	background-repeat: repeat;
+}
+#container {
+	padding: 15px;
+	background-color:@background-color;
+	max-width: 1200px;
+}
+#logo {
+	font-size: 1.5rem;
+	text-align: center;
+	padding: 10%;
+	background: #ba1010;
+	color: #ff3d3d;
+	font-style: italic;
+	text-shadow: 0 -1px 0 #374683;
+}
+#topModel, #middleModel {
+	padding: 20px 20px 0px 20px;
+}
+#picture {
+	margin-top: 1rem;
+	font-size: 1rem;
+	text-align: center;
+}
+#picture p {
+	margin-bottom: 4px;
+}
+#picture .name {
+	margin-top: 5px;
+	color: @theme-color;
+}
+#picture img {
+	width: 130px;
+}
+#info {
+	font-size: 0.9rem;
+	padding-top: 30px;
+	line-height: 30px;
+	color: #999;
+}
+#middleModel .theme {
+	font-size: 1.3rem;
+	color:@theme-color;
+	text-align: center;
+	margin-bottom: 20px;
+}
+#middleModel .info {
+	color: @wenzi-color;
+	line-height: 25px;
+	padding-bottom: 20px;
+	text-align: justify;
+	font-size: 0.9rem;
+	margin-top: 20px;
+}
+#middleModel .info span {
+	display: inline-block;
+	color: #211F1F;
+	padding: 5px 0 5px 0;
+}
+#middleModel  .pic {
+	text-align: center;
+}
+#middleModel .pic p {
+	margin-bottom: 20px;
+}
+#middleModel img {
+	max-width: 50%;
+	max-height: 320px;
+}
+.production .info {
+	text-align: center !important;
+}
+.clear {
+	clear: both;
+}
+@media only screen  and (min-width:480px) {
+	#logo {
+		text-align: center;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+	.info_left {
+		width: 40% !important;
+		margin-left: 10%;
+		float: left !important;
+	}
+	.info_right {
+		width: 39% !important;
+		margin-right: 9%;
+		float: right !important;
+	}
+}
+@media only screen  and (min-width:768px) {
+	#logo {
+		text-align: center;
+		padding: 10% 0;
+		font-size: 2rem;
+		max-width: 1200px;
+	}
+	#logo p {
+		position: relative;
+		top: -50px;
+		left: 35%;
+	}
+	#picture {
+		position: absolute;
+		left: -1%;
+		top: 34%;
+	}
+	#picture img {
+		width: 35%;
+	}
+	.production {
+		width: 33%;
+		float: left;
+	}
+	#topModel, #info {
+		padding-left: 10%;
+	}
+	#info {
+		padding-top: 20px;
+		position: relative;
+	}
+	.model1 .info {
+		text-align: center !important;
+	}
+	.model1 .skill {
+		text-align: justify !important;
+	}
+}
+@media only screen and (min-width:960px) {
+	#picture {
+		position: absolute;
+		left: -1%;
+		top: 28%;
+	}
+	#picture img {
+		width: 35%;
+	}
+	.info_left {
+		width: 24% !important;
+		margin-left: 0%;
+	}
+	.info_right {
+		margin-right: 5%;
+	}
+}
+@media only screen and (min-width:1031px) {
+	#picture img {
+		width: 40%;
+	}
+	#container {
+		margin: 0 auto;
+	}
+}
+@media only screen and (min-width:1251px) {
+	#picture {
+		position: absolute;
+		left: 5%;
+		top: 30%;
+	}
+	#logo {
+		font-size: 3rem;
+	}
+	#container {
+		margin: 0 auto;
+	}
+}
+@media only screen and (min-width:1400px) {
+	#picture {
+		position: absolute;
+		left: 10%;
+		top: 30%;
+	}
+	#container {
+		margin: 0 auto;
+	}
+}
