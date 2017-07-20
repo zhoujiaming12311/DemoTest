@@ -104,30 +104,41 @@ body {
 }
 #logo p{
   opacity: 0;
-  animation:animatop 2s;animation-fill-mode :forwards;
+  animation:animatop 2s;
+	animation-fill-mode :forwards;
 }
 #topContainer{
     opacity: 0;
+	animation-delay:0.5s; 
 	animation:animatop 2s;
-	animation-delay:0.5s; animation-fill-mode :forwards;
+	animation-fill-mode :forwards;
+
 }
 #info{
    opacity: 0;
-	position: relative;
-	animation:animaleft 2s;
-	animation-delay:0.5s;animation-fill-mode :forwards;
+	position: relative;	
+	animation-delay:0.5s;
+
 }
 .model1 {
-	opacity: 0;
+  opacity: 0;
   position: relative;
-   animation-delay:1.5s; 
-  animation:animaright 2s;animation-fill-mode :forwards;
+  animation-delay:1.5s; 
 }
 .production{
 	opacity: 0;
 	position: relative;
-	animation:animaleft 2s;
-	animation-delay:0.5s;animation-fill-mode :forwards;
+	animation-delay:0.5s;
+	
+}
+
+.animationLeft{
+   animation:animaleft 2s;
+   animation-fill-mode :forwards;
+}
+.animationRight{
+   animation:animaleft 2s;
+   animation-fill-mode :forwards;
 }
 @media only screen  and (min-width:480px) {
 	#logo {
