@@ -84,6 +84,51 @@ body {
 .clear {
 	clear: both;
 }
+@keyframes  animatop{
+  0% {opacity: 0}
+  100%{opacity: 1;}
+ 
+}
+@keyframes  animaleft{
+  0% {opacity: 0;left:-50%;}
+  100%{opacity: 1;left:0; }
+  
+ 
+}
+@keyframes  animaright{
+  0% {opacity: 0;right:-50%;}
+  100%{opacity: 1;right:0; }
+   
+  
+
+}
+#logo p{
+  opacity: 0;
+  animation:animatop 2s;animation-fill-mode :forwards;
+}
+#topContainer{
+    opacity: 0;
+	animation:animatop 2s;
+	animation-delay:0.5s; animation-fill-mode :forwards;
+}
+#info{
+   opacity: 0;
+	position: relative;
+	animation:animaleft 2s;
+	animation-delay:0.5s;animation-fill-mode :forwards;
+}
+.model1 {
+	opacity: 0;
+  position: relative;
+   animation-delay:1.5s; 
+  animation:animaright 2s;animation-fill-mode :forwards;
+}
+.production{
+	opacity: 0;
+	position: relative;
+	animation:animaleft 2s;
+	animation-delay:0.5s;animation-fill-mode :forwards;
+}
 @media only screen  and (min-width:480px) {
 	#logo {
 		text-align: center;
